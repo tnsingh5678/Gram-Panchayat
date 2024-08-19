@@ -9,6 +9,7 @@ import Home from './Home'
 import SideBar from './component/components/SideBar'
 import Sidebardata from "./data/Sidebardata"
 import axios from "axios";
+import About from './Pages/About'
 const App = () => {
   const{isAuthorized, setIsAuthorized, setUser} = useContext(Context);
   useEffect(()=>{
@@ -39,6 +40,7 @@ const App = () => {
         <Route path="/singh" element={<Home />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Sidebardata/>}></Route>
+        <Route path="/About" element={<About/>}></Route>
       </Routes>
       {/* <Footer/> */}
       <Toaster/>

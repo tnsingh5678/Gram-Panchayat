@@ -25,7 +25,7 @@ export default function SideBar({ menuItems }) {
       </svg>
       {toggle ? (
         <div className="h-screen grid grid-cols-7 overflow-auto">
-          <div className="h-screen text-center bg-orange-400 hover:bg-green-500">
+          <div className="h-screen text-center bg-orange-400 hover:bg-blue-500 hover:transition-transform duration-700 ease-linear">
             {menuItems.map((item) => (
               <li key={item.id} className="hover:bg-slate-400">
                 <Link

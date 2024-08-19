@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from 'axios';
 import toast from "react-hot-toast";
 import { Context } from "../../main";
-import { Navigate } from "react-router-dom";
+import { Navigate,Link } from "react-router-dom";
 
 const Registration = () => {
   const [name, setName] = useState('');
@@ -49,9 +49,11 @@ const Registration = () => {
           Streamline and enhance the efficiency of our Gram Panchayat operations. Register now to get started!
         </p>
         <br />
+        <Link to="/Login">
         <button className="bg-white text-orange-400 px-6 py-3 rounded-md mt-4 md:mt-0">
           Login
         </button>
+        </Link>
       </div>
 
       <div className="bg-white flex flex-col justify-center items-center w-full md:w-1/2 p-8">

@@ -8,7 +8,7 @@ import HomeNav from "./component/components/HomeNav"
 import FooterImage from "./component/components/FooterImage";
 import Footer from "./component/components/Footer";
 import WhatsNew from "./data/WhatsNew";
-
+import Carddata from "./data/Carddata";
 
 export default function Home(){
    
@@ -25,7 +25,7 @@ export default function Home(){
 
         </div>
         
-        <div className="flex h-auto justify-center bg-slate-400">
+        <div className="flex h-auto justify-center bg-orange-400">
 
         <HomeNav></HomeNav>
         
@@ -52,20 +52,9 @@ export default function Home(){
         <div className="bg-blue-900">
             <div className="text-4xl text-center">Schemes/Initiatives</div>
             <br/>
-        <div className="grid grid-cols-5 bg-blue-900">
-          
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            <Card title="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, atque."/>
-            
-            
-
+        
+        <div>
+            <Carddata></Carddata>
         </div>
         </div>
         <FooterImage></FooterImage>
