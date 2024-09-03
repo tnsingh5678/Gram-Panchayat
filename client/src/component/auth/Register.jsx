@@ -1,16 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import toast from "react-hot-toast";
 import { Context } from "../../main";
-import { Navigate,Link } from "react-router-dom";
+import { Navigate, Link, useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isRegistered, setIsRegistered] = useState(false); 
+  const navigate = useNavigate(); 
 
-  const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
+  const { setIsAuthorized, setUser } = useContext(Context);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -31,14 +33,25 @@ const Registration = () => {
       setPassword("");
       setPhone("");
       setIsAuthorized(true);
-      setUser(data.user);  // Assuming the backend returns a user object
+      setUser(data.user);  
+      setIsRegistered(true); 
     } catch (error) {
       toast.error(error.response?.data?.message || "Registration failed");
     }
   };
 
-  if (isAuthorized) {
-    return <Navigate to="/" />;
+  useEffect(() => {
+    if (isRegistered) {
+      const timer = setTimeout(() => {
+        navigate("/login"); 
+      }, 500);
+
+      return () => clearTimeout(timer); 
+    }
+  }, [isRegistered, navigate]);
+
+  if (isRegistered) {
+    return null; 
   }
 
   return (
@@ -50,9 +63,9 @@ const Registration = () => {
         </p>
         <br />
         <Link to="/Login">
-        <button className="bg-white text-orange-400 px-6 py-3 rounded-md mt-4 md:mt-0">
-          Login
-        </button>
+          <button className="bg-white text-orange-400 px-6 py-3 rounded-md mt-4 md:mt-0">
+            Login
+          </button>
         </Link>
       </div>
 
@@ -131,3 +144,4 @@ const Registration = () => {
 };
 
 export default Registration;
+ 

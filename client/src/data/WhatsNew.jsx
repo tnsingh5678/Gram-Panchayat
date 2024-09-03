@@ -18,14 +18,14 @@ export default function WhatsNew() {
     return (
         <div>
 
-            <h1 className="text-4xl m-4 hover:bg-gray-400">What's New</h1><br/>
+            <h1 className="text-4xl hover:bg-gray-400">What's New</h1><br/>
             {data.map((e, index) => (
                 <div key={index} className="text-left p-1 hover:text-blue-800">
                     <li>
                     <Link to={`/${e.key}`}>
                         {e.key}
                     </Link></li>
-                    <br />
+                  
                 </div>
             ))}
         </div>

@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
-import BasicButtonExample from '../component/components/HomeNav';
+import HomeNav from '../component/components/HomeNav';
 import Aboutdata from '../data/Aboutdata';
 import Footer from '../component/components/Footer';
 
 export default function About() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [direction, setDirection] = useState('right'); // Track direction for slide effect
+    const [direction, setDirection] = useState('right'); 
 
     const links = [
         { key: 0, value: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6IwoZHwdqT1fPKQ74CW2YPkWo2B-1rWeG-g&s" },
         { key: 1, value: "https://pbs.twimg.com/profile_images/1554405307627016193/Y8yWsnHr_400x400.jpg" },
-        { key: 2, value: "https://cdn.britannica.com/13/146313-050-DD9AAC27/India-War-Memorial-arch-New-Delhi-Sir.jpg" }
+        { key: 2, value: "https://cdn.britannica.com/13/146313-050-DD9AAC27/India-War-Memorial-arch-New-Delhi-Sir.jpg" },
+        { key: 3, value: "https://www.iasexam.com/wp-content/uploads/7-137.webp"}
     ];
 
     useEffect(() => {
@@ -19,7 +20,7 @@ export default function About() {
             setCurrentImageIndex(prevIndex => (prevIndex + 1) % links.length);
         }, 5000);
 
-        return () => clearInterval(intervalId); // Clear interval on component unmount
+        return () => clearInterval(intervalId); 
     }, []);
 
     const handlePrevious = () => {
@@ -38,20 +39,14 @@ export default function About() {
 
     return (
         <>
-            <div>
-            <div className="flex object-fill justify-between">
-            <div>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfU34EC9GlHKR4DhdB4s5qS03owiN_tqlrDA&s" className="w-auto h-[150px]"></img>
-            </div>
-            <div>
-             <img src="https://www.indiastack.global/wp-content/uploads/2023/01/G20-Logo-1.png" className="w-auto h-[100px]"></img>
-            </div>
-
-        </div>
-            </div>
-            <div className='flex h-auto justify-center bg-orange-400'><BasicButtonExample/></div>
-            <div>carousel</div>
+        <div className="flex h-auto justify-between bg-orange-400">
+        <div className="justify">
+      <img src="./AS_L2.jpg" className="h-[100px] w-[100px] bg-blue-600 p-1"></img></div>
+        <HomeNav />
+      </div>
+            
             <div className="relative w-full h-[400px] overflow-hidden rounded-lg border-2 border-orange-400">
+                
                 {links.map((link, index) => (
                     <img
                         key={link.key}

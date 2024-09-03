@@ -15,17 +15,12 @@ export default function Home(){
     return(
         <>
         
-        <div className="flex object-fill justify-between">
-            <div>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfU34EC9GlHKR4DhdB4s5qS03owiN_tqlrDA&s" className="w-auto h-[150px]"></img>
-            </div>
-            <div>
-             <img src="https://www.indiastack.global/wp-content/uploads/2023/01/G20-Logo-1.png" className="w-auto h-[100px]"></img>
-            </div>
-
-        </div>
+        <div className="flex justify-between w-[150px] h-[150px] items-center p-4 bg-gradient-to-r from-indigo-500 to-purple-600">
+        <img src="./AS_L2.jpg"></img>
+      </div>
         
         <div className="flex h-auto justify-center bg-orange-400">
+            
 
         <HomeNav></HomeNav>
         
@@ -35,8 +30,8 @@ export default function Home(){
         <div className="h-auto w-auto">
             <img src="https://cbpssubscriber.mygov.in/assets/uploads/juGajmc1gOVBUtt5?15"></img>
         </div>
-        <div className="bg-blue-800">
-            <h1>Latest News</h1>
+        <div className="bg-blue-800 p-2 h-[50px]">
+            <h1 className="text-4xl">Latest News</h1>
         </div>
         <div className="flex  justify-center p-4">
             <div className="w-[400px] m-4 h-auto">

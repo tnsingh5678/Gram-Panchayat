@@ -25,6 +25,8 @@ export default function Carddata() {
           return <Card title={`${item.title}`} data={`${item.data}`} />
         })}
 
+        
+
 
 
 

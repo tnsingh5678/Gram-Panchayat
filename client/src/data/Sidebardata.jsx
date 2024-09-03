@@ -1,6 +1,6 @@
-import SideBar from "../component/components/SideBar";
+import SideBarHome from "../component/components/SideBarHome";
 
-const menuItems = [
+const menuItems1 = [
   { id: 1, name: "Home", path: "/" },
   { id: 2, name: "About", path: "/about" },
   { id: 3, name: "Contact", path: "/contact" },
@@ -19,10 +19,18 @@ const menuItems = [
 
 ];
 
+const menuItems = [
+  { id: 1, name: "Home", path: "/" },
+  { id: 2, name: "About", path: "/about" },
+  { id: 3, name: "Contacts", path: "/contacts" },
+  { id: 4, name: "Schemes", path: "/schemes" },
+  { id: 5, name: "Application", path: "/application" }
+];
+
 function Sidebardata() {
   return (
     <div>
-      <SideBar menuItems={menuItems} />
+      <SideBarHome menuItems={menuItems} />
       
     </div>
   );

@@ -35,7 +35,7 @@ development with social justice, and efficient delivery of services
         <h1 className="m-4 text-3xl text-orange-500">
             Office Location
         </h1>
-        <ul className="m-4 align-middle justify-normal">
+        <div className="m-4 p-4 align-middle justify-normal">
             <li>
             7, Krishi Bhawan,Dr Rajendra Prasad Road, New Delhi-110001
             </li>
@@ -45,7 +45,7 @@ development with social justice, and efficient delivery of services
             <li>
             11th Floor, Jeevan Prakash Building, 25 Kasturba Gandhi Marg, New Delhi-110001
             </li>
-        </ul>
+        </div>
         </>
     )
 }

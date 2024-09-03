@@ -6,10 +6,14 @@ import Register from './component/auth/Register'
 import { Toaster } from "react-hot-toast";
 import NotFound from './component/NotFound/notfound'
 import Home from './Home'
-import SideBar from './component/components/SideBar'
+import SideBar from './component/components/SideBarHome'
 import Sidebardata from "./data/Sidebardata"
 import axios from "axios";
 import About from './Pages/About'
+import SideAbout from './data/SideAbout'
+import Contacts from './Pages/Contacts'
+import Schemes from './Pages/Schemes'
+import ApplicationForm from './Pages/Application'
 const App = () => {
   const{isAuthorized, setIsAuthorized, setUser} = useContext(Context);
   useEffect(()=>{
@@ -36,11 +40,14 @@ const App = () => {
        {/* <Navbar/> */}
       <Routes>
         <Route path="/login" element={<Login/>}></Route>
-        <Route path="/register" element={<Register/>}></Route>
+        <Route path="/" element={<Register/>}></Route>
         <Route path="/singh" element={<Home />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Sidebardata/>}></Route>
-        <Route path="/About" element={<About/>}></Route>
+        <Route path="/home" element={<Sidebardata/>}></Route>
+        <Route path="/About" element={<SideAbout/>}></Route>
+        <Route path='/contacts' element={<Contacts/>}></Route>
+        <Route path='/schemes' element={<Schemes/>}></Route>
+        <Route path='/Application' element={<ApplicationForm/>}></Route>
       </Routes>
       {/* <Footer/> */}
       <Toaster/>
